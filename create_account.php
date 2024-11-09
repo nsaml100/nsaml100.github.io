@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$Name = $_POST['Name'];
 	$UserName = $_POST['UserName'];
 	$Password = $_POST['Password'];
@@ -10,12 +11,31 @@
 		die('Connection Failed : '.conn->connect_error);
 	}
 	else{
-		$stmt = $conn->prepare("insert into user(Name, UserName, Password, Email)
+		if (isset($_POST['Username'])) {
+ 			function validate($data){
+ 				$data = trim($data);
+ 				$data = stripslashes($data);
+ 				$data = htmlspecialchars($data);
+ 				return $data;
+	 		}
+	 	}
+	 	$Username = $_POST['UserName'];
+
+	 	$sql = "select * from user where Username = '$Username'";
+	 	$result = mysqli_query($conn, $sql);
+
+ 		if (mysqli_num_rows($result)) {
+ 			header("Location: index.php?error=username already taken");
+ 			exit();	
+ 		}
+ 		else{
+			$stmt = $conn->prepare("insert into user(Name, UserName, Password, Email)
 			values(?, ?, ?, ?)");
-		$stmt->bind_param("ssss", $Name, $UserName, $Password, $Email);
-		$stmt->execute();
-		echo "Success!";
-		$stmt->close();
-		$conn->close();
+			$stmt->bind_param("ssss", $Name, $UserName, $Password, $Email);
+			$stmt->execute();
+			echo "Success!";
+			$stmt->close();
+			$conn->close();
+		}
 	}
 ?>
