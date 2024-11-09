@@ -78,3 +78,10 @@ button:hover {
 .switch-form a:hover {
     text-decoration: underline;
 }
+.error {
+    background-color: #f2dede;
+    color: red;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+}
