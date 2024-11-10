@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App - Support</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>SCOPE</h1>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="create.html">Create Flashcards</a></li>
+            <li><a href="view.html">View Flashcard Sets</a></li>
+            <li><a href="stats.html">Dashboard</a></li>
+            <li><a href="support.html">Customer Service</a></li>
+            <li><a href="index.html">Login / Sign up</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content for Support -->
+    <div id="support-content">
+        <h2>Support Center</h2>
+
+        <!-- Ticket Submission Form -->
+        <div id="ticket-form">
+            <h3>Submit a Support Ticket</h3>
+            <form action="submit-ticket.html" method="post">
+                <label for="ticket-title">Ticket Title:</label>
+                <input type="text" id="ticket-title" name="ticket-title" required>
+                <br>
+                <label for="ticket-description">Ticket Description:</label>
+                <textarea id="ticket-description" name="ticket-description" rows="4" required></textarea>
+                <button type="submit">Submit Ticket</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <!-- Ticket History Section -->
+        <div id="ticket-history">
+            <h3>Your Support Tickets</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket Title</th>
+                        <th>Status</th>
+                        <th>Date Submitted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Examples -->
+                    <tr>
+                        <td>Login Issues</td>
+                        <td>Open</td>
+                        <td>2024-11-09</td>
+                    </tr>
+                    <tr>
+                        <td>Flashcard Review Error</td>
+                        <td>Resolved</td>
+                        <td>2024-10-25</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
