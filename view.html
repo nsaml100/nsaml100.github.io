@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App - Create Flashcard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+        <!-- Navigation Bar -->
+        <nav>
+            <h1>SCOPE</h1>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="create.html">Create Flashcards</a></li>
+                <li><a href="view.html">View Flashcard Sets</a></li>
+                <li><a href="stats.html">Dashboard</a></li>
+                <li><a href="support.html">Customer Service</a></li>
+                <li><a href="index.html">Login / Sign up</a></li>
+            </ul>
+        </nav>
+
+    <h1>Flashcard Set: <span id="set-title">Sample Set</span></h1>
+
+    <!-- Flashcards Section -->
+    <div id="flashcard-container">
+        <!-- Example Flashcard need to edit once back-end is set-up-->
+        <div class="flashcard" id="flashcard-2">
+            <p>Question:...?</p>
+            <p><strong>Answer:</strong> J</p>
+            <div class="buttons">
+                <button onclick="markAsIncorrect(2)">Got it Wrong</button>
+                <button onclick="nextFlashcard()">Next</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Review Section -->
+<div id="review-section" style="display: none;">
+    <h2>Review This Set</h2>
+    <p>How would you rate this set?</p>
+
+    <!-- Star Rating -->
+    <div id="star-rating">
+        <input type="radio" name="rating" id="star5" value="5">
+        <label for="star5" title="5 stars">★</label>
+        <input type="radio" name="rating" id="star4" value="4">
+        <label for="star4" title="4 stars">★</label>
+        <input type="radio" name="rating" id="star3" value="3">
+        <label for="star3" title="3 stars">★</label>
+        <input type="radio" name="rating" id="star2" value="2">
+        <label for="star2" title="2 stars">★</label>
+        <input type="radio" name="rating" id="star1" value="1">
+        <label for="star1" title="1 star">★</label>
+    </div>
+
+    <br>
+    <textarea id="review" placeholder="Write your review here..."></textarea>
+    <button onclick="submitReview()">Submit Review</button>
+</div>
+
+    <script>
+        let currentFlashcard = 0;
+        const flashcards = document.querySelectorAll(".flashcard");  //change to let flashcards = []; once database set up
+        const incorrectAnswers = [];
+        const startTime = new Date();  // Track time at start of session
+
+        // Show the first flashcard initially
+        flashcards[currentFlashcard].style.display = 'block';
+        /* once database set up replace with:
+        // Display the current flashcard
+        function displayFlashcard() {
+            const flashcardContainer = document.getElementById('flashcard-container');
+            flashcardContainer.innerHTML = ''; // Clear previous content
+
+            if (currentFlashcardIndex < flashcards.length) {
+                const flashcard = flashcards[currentFlashcardIndex];
+                const flashcardElement = document.createElement('div');
+                flashcardElement.className = 'flashcard';
+
+                // Question and Answer layout
+                flashcardElement.innerHTML = `
+                    <div class="question-answer">
+                        <p>Question: ${flashcard.question}</p>
+                        <button onclick="showAnswer(${flashcard.id})">Show Answer</button>
+                        <p class="answer" id="answer-${flashcard.id}" style="display: none;"><strong>Answer:</strong> ${flashcard.answer}</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="markAsIncorrect(${flashcard.id})">Got it Wrong</button>
+                        <button onclick="nextFlashcard()">Next</button>
+                    </div>
+                `;
+                flashcardContainer.appendChild(flashcardElement);
+            } else {
+                showReviewSection();
+            }
+        }
+        */
+
+      /*once database and some flashcard, add loading from database:
+        // Fetch flashcards from the server
+        async function loadFlashcards() {
+            try {
+                const response = await fetch('http://localhost:3000/flashcards'); //make sure correct host number
+                flashcards = await response.json();
+                displayFlashcard();
+            } catch (error) {
+                console.error('Error fetching flashcards:', error);
+            }
+        }
+    */
+
+        function nextFlashcard() {
+            flashcards[currentFlashcard].style.display = 'none';  
+            currentFlashcard++;
+            if (currentFlashcard < flashcards.length) {
+                flashcards[currentFlashcard].style.display = 'block';  
+            } else {
+                showReviewSection();
+            }
+        }
+        /*replace with this when database updated:
+        function nextFlashcard() {
+            currentFlashcardIndex++;
+            displayFlashcard();
+        }
+        */
+
+        function markAsIncorrect(flashcardId) {
+            incorrectAnswers.push(flashcardId);
+            nextFlashcard();
+        }
+
+        function showReviewSection() {
+            const endTime = new Date();  // Track end time when review section is shown
+            document.getElementById("review-section").style.display = "block";
+        }
+
+        function submitReview() {
+            const rating = document.querySelector('input[name="rating"]:checked')?.value || "No rating";
+            const reviewText = document.getElementById("review").value;
+            const stats = {
+                incorrectAnswers: incorrectAnswers,
+                timeTaken: timeTaken,
+                rating: rating,
+                review: reviewText
+            };
+                console.log(stats); // Replace this with backend API call to save stats
+
+                alert("Review submitted! Thank you.");
+        }
+    </script>
+</body>
+</html>
