@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>SCOPE</h1>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="create.html">Create Flashcards</a></li>
+            <li><a href="view.html">View Flashcard Sets</a></li>
+            <li><a href="stats.html">Dashboard</a></li>
+            <li><a href="support.html">Customer Service</a></li>
+            <li><a href="index.html">Login / Sign up</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content for Dashboard -->
+    <div id="dashboard-content">
+        <!-- Overall Stats -->
+        <div id="overall-stats">
+            <h3>Overall Performance</h3>
+            <p><strong>Percentage of Correct Flashcards: </strong><span id="overall-correct-percentage">75%</span></p>
+            <p><strong>Overall Flashcards Worked On: </strong><span id="overall-flashcards-worked-on">120</span> times</p>
+            <p><strong>Total sets of flashcards Worked On:</strong><span id = "total-sets-worked">10</span> sets</p>
+        </div>
+
+        <hr>
+
+        <!-- Flashcard Set Stats -->
+        <div id="set-stats">
+            <h3>Flashcard Set Performance</h3>
+            <p><strong>Flashcards Completed: </strong><span id="set-flashcards-completed">25</span></p>
+            <p><strong>Flashcard Set Correctly Answered Percentage: </strong><span id="set-average-rating">60%</span></p>
+            <p><strong>Total Times Set Visited: </strong><span id="total-times-set-visited">5</span> times</p>
+            <p><strong>Recent Set Performance: </strong><span id="recent-set-performance">85%</span> correct</p>
+
+        <hr>
+
+        <!-- Flashcard Sets Created -->
+        <div id="flashcard-set-stats">
+            <h3>Flashcard Creation Stats</h3>
+            <p><strong>Total sets created: </strong><span id="total-sets-created">4</span></p>
+            <p><strong>Average Set rating: </strong><span id="most-reviewed-flashcard">4.3</span> out of 5</p>
+            <p><strong>Total times Sets Visited: </strong><span id="total-set-views">21</span> interactions</p>
+        </div>
+
+        <div id="chart section">
+            <h3>Flashcard Set Charts</h3>
+            <canvas id="usageChart" width="25" height="5"></canvas>
+        </div>
+    </div>
+    <script>
+        var ctx = document.getElementById('usageChart').getContext('2d');
+        var usageChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Set 1', 'Set 2', 'Set 3', 'Set 4', 'SEt 5'],
+                datasets: [{
+                    label: 'Recent Set Performance',
+                    data: [85, 78, 92, 75, 82],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
