@@ -1,31 +1,203 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #D5D8FC;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
     flex-direction: column;
 }
 
-/* Navigation bar */
-nav {
-    position: sticky;
-    top: 0;
-    width: 100%;       
-    padding: 10px 0;
-    z-index: 1000;     
+#body-login {
+    justify-content: center;
+    align-items: center;
 }
 
-ul {
+
+.container {
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+#body-main{
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #D5D8FC;
+    height: 110vh;
+
+}
+/* Navigation bar */
+
+.nav-page {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+  }
+#logo-main {
+    width: 150px;
+    height: auto;
+}
+  .nav-page ul{
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
+  }
+
+  .nav-page ul li{
+    margin: 0 15px;
+  }
+
+  .nav-page a{
+    text-decoration: none;
+    color: #000;
+    padding: 35px 20px;
+    text-decoration: none;
+  }
+
+ nav ul li a:hover{
+    color: #475F82;
+    font-size: 1.3rem;
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
+    margin-left: 30px;
 }
 
+/* Hero section */
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('main-background-top.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+}
+
+.hero h1 {
+    font-family: sans-serif;
+    font-size: 60px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 30px;
+}
+
+.hero p {
+    color:#FFFFFF;
+    padding-bottom: 150px;
+}
+
+.cta-button {
+    text-decoration: none;
+    background:  radial-gradient(ellipse, #C3C3C3, #45a049);
+    color: #000;
+    padding: 20px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.7);
+}
+/* Introduction and Feature Section */
+
+.intro-feature{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 80px;
+}
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+.feature-heading{
+    font-size: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+i{
+    width: fit-content;
+    font-size: 50px;
+    color: #333333;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    padding: 12px;
+}
+
+.feature p {
+    line-height: 35px;
+    color: #333333;
+}
+
+#intro-info, #team-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 80px;
+    border-top: 10px dotted #FFFFFF;
+    color: white;
+}
+
+#intro-info h3 {
+    font-size: 30px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 1px 150px;
+}
+.intro-pic {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#intro-info p, #team-info p {
+    color: #333333;
+    margin: 10px 100px;
+    line-height: 40px;
+}
+
+/* Team Information */
+#team-info {
+    display: flex;
+}
+
+#team-info h3 {
+    justify-content: flex-end;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+}
 /* Welcome message styles */
 h1 {
     text-align: center;
@@ -41,17 +213,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-.hero {
-    padding-top: 200px;
-}
-.container {
-    width: 300px;
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 h2 {
     text-align: center;
     color: #333;
@@ -59,13 +220,6 @@ h2 {
 
 h3 {
     padding: 1px 450px;
-}
-
-.feature {
-    text-align: center;
-    line-height: 1.6;
-    text-indent: 30px;
-    padding: 20px 200px;
 }
 
 label {
@@ -82,7 +236,7 @@ input[type="email"] {
     border-radius: 4px;
 }
 
-button, .cta-button {
+button {
     width: 100%;
     padding: 10px;
     background-color: #4CAF50;
@@ -93,7 +247,7 @@ button, .cta-button {
     cursor: pointer;
 }
 
-button:hover, .cta-button:hover {
+button:hover {
     background-color: #45a049;
 }
 
