@@ -1,4 +1,7 @@
 <?php
+// written by: Nathan Lynott
+// tested by: Nathan Lynott
+// debugged by: Nathan Lynott
 	$id = $_GET['id'];
 	$Username = $_GET['username'];
 	//db connection

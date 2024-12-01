@@ -1,4 +1,7 @@
 <?php
+// written by: Nathan Lynott
+// tested by: Nathan Lynott
+// debugged by: Nathan Lynott
 	include "db_conn.php";
 	$UserName = $_POST['UserName'];
 	$Id = $_POST['Id'];

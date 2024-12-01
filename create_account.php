@@ -1,4 +1,7 @@
 <?php
+// written by: Nathan Lynott
+// tested by: Nathan Lynott
+// debugged by: Nathan Lynott
 	$Name = $_POST['Name'];
 	$UserName = $_POST['UserName'];
 	$Password = $_POST['Password'];

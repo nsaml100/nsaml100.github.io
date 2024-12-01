@@ -1,4 +1,7 @@
 <?php
+// written by: Nathan Lynott
+// tested by: Nathan Lynott
+// debugged by: Nathan Lynott
 include "db_conn.php";
 if (isset($_GET['username']) & isset($_GET['id']) & isset($_GET['setid'])) {
 $Username = $_GET['username'];

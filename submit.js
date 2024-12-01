@@ -1,3 +1,7 @@
+// written by: Nathan Lynott
+// tested by: Nathan Lynott
+// debugged by: Nathan Lynott
+
 if (document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded', ready)
 }else {
