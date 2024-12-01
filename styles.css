@@ -161,7 +161,7 @@ i{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 80px;
+    padding: 40px 20px;
     border-top: 10px dotted #FFFFFF;
     color: white;
 }

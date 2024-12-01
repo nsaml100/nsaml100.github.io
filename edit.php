@@ -46,7 +46,7 @@ $row = mysqli_fetch_assoc($result)
                 <input style="display: none;" type="text" id="flashcardId" name="flashcardId" value="<?php echo $row['FlashCardsID'] ?>" required>
                 <label for="question">Question</label>
                 <input type="text" id="question" name="Question" value="<?php echo $row['front'] ?>" required>
-
+                <br>
                 <label for="answer">Answer</label>
                 <input type="text" id="answer" name="Answer" value="<?php echo $row['back'] ?>" required>
 
