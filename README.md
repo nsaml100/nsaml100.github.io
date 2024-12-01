@@ -1,2 +1,3 @@
 # nsaml100.github.io
 Strider Flash Card App
+This app connects to a database that during our demo phase I hosted locally. This database allows for the user to create a login, or login as an existing user. The user will be able to create sets, create flashcards, edit those flashcards and use the flashcards for studying purposes. Even if the user were to leave the site and close out entirely, the information will be saved on the server as long as it is running allowing for the user to continue studying at their leisure. The ap also has a help desk site where the user can log any issues they run into.
