@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "db_conn.php";
  if (isset($_POST['Username']) && isset($_POST['Password'])) {
  		function validate($data){
@@ -17,9 +16,9 @@ include "db_conn.php";
  	if (mysqli_num_rows($result) === 1) {
  		$row = mysqli_fetch_assoc($result);
  		if($row['UserName'] === $Username &&$row['Password'] === $Password ){
- 			$SESSION['Username'] = $row['Username'];
- 			$SESSION['ID'] = $row['ID'];
- 			header("Location: index.php"); //placeholder
+ 			$_SESSION['Username'] = $row['Username'];
+ 			$ID = $row['ID'];
+ 			header("Location: main.php?username=$Username&id=$ID");
  			exit();	
  		}else{
  			header("Location: index.php?error=username or password incorrect");
@@ -30,3 +29,4 @@ include "db_conn.php";
  			exit();	
  	}
  }
+ ?>

@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: #D5D8FC;
@@ -27,6 +28,7 @@ body {
     box-sizing: border-box;
     background-color: #D5D8FC;
     height: 110vh;
+    text-align: center;
 
 }
 /* Navigation bar */
@@ -229,7 +231,7 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -237,7 +239,7 @@ input[type="email"] {
 }
 
 button {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -322,7 +324,7 @@ button:hover {
 }
 }
 #ticket-title {
-    width: 100%; 
+    width: 90%; 
     max-width: 300px; 
     padding: 8px;
     margin: 10px 0;
@@ -331,7 +333,7 @@ button:hover {
 }
 
 #ticket-description {
-    width: 100%;
+    width: 90%;
     height: 150px; 
     padding: 8px;
     margin: 10px 0;
@@ -354,4 +356,21 @@ button:hover {
 #ticket-history th {
     background-color: #f4f4f9; /* Light background for the header */
     font-weight: bold; /* Makes the header text bold */
+}
+.errors {
+    background-color: #f2dede;
+    color: red;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+}
+table {
+  align: center;
+  margin-left: auto; 
+  margin-right: auto;
+  padding: 20px;
+    background: #f4f4f9;
+}
+tr{
+    background: white;
 }

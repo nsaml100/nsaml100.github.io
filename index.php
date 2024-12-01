@@ -7,7 +7,7 @@
     <title>Flashcard App - Login / Create Account</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS for styling -->
 </head>
-<body>
+<body id="body-login">
     <div class="container">
         <!-- Welcome Message -->
         <h1>Welcome to SCOPE</h1>
@@ -16,10 +16,10 @@
         <!-- Login Form -->
         <div id="login-form">
             <h2>Login</h2>
-            <form action="login.php" method="POST">
-                <?php if (isset($_GET['error'])) { ?>
-                    <p class="error"> <?php echo $_GET['error']; ?> </p>
+            <?php if (isset($_GET['error'])) { ?>
+                    <p class="errors"> <?php echo $_GET['error']; ?> </p>
                 <?php } ?>
+            <form action="login.php" method="POST">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="Username" required>
 
@@ -30,6 +30,7 @@
             </form>
             <div class="switch-form">
                 <p>Don't have an account? <a href="#" onclick="toggleForms()">Create one</a></p>
+                <p>Forgot your password? <a href="support.php">submit a ticket!</a></p>
             </div>
         </div>
 

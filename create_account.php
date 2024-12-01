@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	$Name = $_POST['Name'];
 	$UserName = $_POST['UserName'];
 	$Password = $_POST['Password'];
@@ -33,7 +32,7 @@
 			values(?, ?, ?, ?)");
 			$stmt->bind_param("ssss", $Name, $UserName, $Password, $Email);
 			$stmt->execute();
-			echo "Success!";
+			header("Location: main.php");
 			$stmt->close();
 			$conn->close();
 		}
